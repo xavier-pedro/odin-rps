@@ -3,21 +3,56 @@ escolhe um numero aleatorio entre 1 e 3
 retorna esse valor
 */
 
-function getComputerChoice() { 
-    let computerChoice = Math.round(Math.random() * 2 + 1);
+function getComputerChoice() {
+  let computerChoice = Math.round(Math.random() * 2 + 1);
 
-    computerChoice = computerChoice === 1 ?
-    "PEDRA" : computerChoice === 2 ?
-    "PAPEL" : "TESOURA";
+  computerChoice =
+    computerChoice === 1 ? "PEDRA" : computerChoice === 2 ? "PAPEL" : "TESOURA";
 
-    return computerChoice;
+  return computerChoice;
 }
 
-function getHumanChoice(){
-    let humanChoice = prompt("Digite sua escolha: \nPedra \nPapel \nTesoura")
-    humanChoice = humanChoice.toUpperCase();
-    return humanChoice;
+function getHumanChoice() {
+  let humanChoice = prompt("Digite sua escolha: \nPedra \nPapel \nTesoura ");
+  humanChoice = humanChoice.toUpperCase();
+  return humanChoice;
 }
 
 let humanScore = 0;
 let computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice === computerChoice) {
+    return alert(
+      `Houve um empate!\nSua escolha: ${humanChoice}\nEscolha do computador: ${computerChoice}`,
+    );
+  } else if (humanChoice === "PEDRA" && computerChoice === "PAPEL") {
+    computerScore++;
+    return alert(
+      `Você perdeu!\nVocê escolheu ${humanChoice} e o computador ${computerChoice} \n\nPONTUAÇÃO:\nVocê: ${humanScore}\nComputador: ${computerScore} `,
+    );
+  } else if (humanChoice === "PAPEL" && computerChoice === "TESOURA") {
+    computerScore++;
+    return alert(
+      `Você perdeu!\nVocê escolheu ${humanChoice} e o computador ${computerChoice} \n\nPONTUAÇÃO:\nVocê: ${humanScore}\nComputador: ${computerScore} `,
+    );
+  } else if (humanChoice === "TESOURA" && computerChoice === "PEDRA") {
+    computerScore++;
+    return alert(
+      `Você perdeu!\nVocê escolheu ${humanChoice} e o computador ${computerChoice} \n\nPONTUAÇÃO:\nVocê: ${humanScore}\nComputador: ${computerScore} `,
+    );
+  } else {
+    humanScore++;
+    return alert(
+      `Você venceu!\nVocê escolheu ${humanChoice} e o computador ${computerChoice} \n\nPONTUAÇÃO:\nVocê: ${humanScore}\nComputador: ${computerScore} `,
+    );
+  }
+
+  
+}
+
+
+
+
+playRound(getHumanChoice(), getComputerChoice());
+
