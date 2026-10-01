@@ -4,17 +4,20 @@ retorna esse valor
 */
 
 function getComputerChoice() { 
-    return Math.round(Math.random() * 2 + 1);
-}
+    let computerChoice = Math.round(Math.random() * 2 + 1);
 
-console.log(getComputerChoice())
+    computerChoice = computerChoice === 1 ?
+    "PEDRA" : computerChoice === 2 ?
+    "PAPEL" : "TESOURA";
+
+    return computerChoice;
+}
 
 function getHumanChoice(){
-    let humanChoice = prompt("Digite o número da sua escolha: \n [1] - Pedra \n [2] - Papel \n [3] - Tesoura")
+    let humanChoice = prompt("Digite sua escolha: \nPedra \nPapel \nTesoura")
+    humanChoice = humanChoice.toUpperCase();
     return humanChoice;
 }
-
-console.log(getHumanChoice())
 
 let humanScore = 0;
 let computerScore = 0;
