@@ -53,11 +53,15 @@ function playGame() {
 
   if (humanScore > computerScore) {
     return alert(
-      `Você VENCEU!\nSua pontuação:${humanScore}\nComputador: ${computerScore}`,
+      `Você VENCEU!\nSua pontuação: ${humanScore}\nComputador: ${computerScore}`,
     );
-  } else {
+  } else if (humanScore < computerScore){
     return alert(
-      `Você PERDEU!\nSua pontuação:${humanScore}\nComputador: ${computerScore}`,
+      `Você PERDEU!\nSua pontuação: ${humanScore}\nComputador: ${computerScore}`,
+    );
+  } else{
+    return alert(
+      `Houve um EMPATE!\nSua pontuação: ${humanScore}\nComputador: ${computerScore}`,
     );
   }
 }
