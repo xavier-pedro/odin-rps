@@ -18,41 +18,44 @@ function getHumanChoice() {
   return humanChoice;
 }
 
-let humanScore = 0;
-let computerScore = 0;
 
-function playRound(humanChoice, computerChoice) {
-  if (humanChoice === computerChoice) {
-    return alert(
-      `Houve um empate!\nSua escolha: ${humanChoice}\nEscolha do computador: ${computerChoice}`,
-    );
-  } else if (humanChoice === "PEDRA" && computerChoice === "PAPEL") {
-    computerScore++;
-    return alert(
-      `Você perdeu!\nVocê escolheu ${humanChoice} e o computador ${computerChoice} \n\nPONTUAÇÃO:\nVocê: ${humanScore}\nComputador: ${computerScore} `,
-    );
-  } else if (humanChoice === "PAPEL" && computerChoice === "TESOURA") {
-    computerScore++;
-    return alert(
-      `Você perdeu!\nVocê escolheu ${humanChoice} e o computador ${computerChoice} \n\nPONTUAÇÃO:\nVocê: ${humanScore}\nComputador: ${computerScore} `,
-    );
-  } else if (humanChoice === "TESOURA" && computerChoice === "PEDRA") {
-    computerScore++;
-    return alert(
-      `Você perdeu!\nVocê escolheu ${humanChoice} e o computador ${computerChoice} \n\nPONTUAÇÃO:\nVocê: ${humanScore}\nComputador: ${computerScore} `,
-    );
-  } else {
-    humanScore++;
-    return alert(
-      `Você venceu!\nVocê escolheu ${humanChoice} e o computador ${computerChoice} \n\nPONTUAÇÃO:\nVocê: ${humanScore}\nComputador: ${computerScore} `,
-    );
-  }
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
 
-  
+    function playRound(humanChoice, computerChoice) {
+      if (humanChoice === computerChoice) {
+        return alert(
+          `Houve um empate!\nSua escolha: ${humanChoice}\nEscolha do computador: ${computerChoice}`,
+        );
+      } else if (humanChoice === "PEDRA" && computerChoice === "PAPEL") {
+        computerScore++;
+        return alert(
+          `Você perdeu!\nVocê escolheu ${humanChoice} e o computador ${computerChoice} \n\nPONTUAÇÃO:\nVocê: ${humanScore}\nComputador: ${computerScore} `,
+        );
+      } else if (humanChoice === "PAPEL" && computerChoice === "TESOURA") {
+        computerScore++;
+        return alert(
+          `Você perdeu!\nVocê escolheu ${humanChoice} e o computador ${computerChoice} \n\nPONTUAÇÃO:\nVocê: ${humanScore}\nComputador: ${computerScore} `,
+        );
+      } else if (humanChoice === "TESOURA" && computerChoice === "PEDRA") {
+        computerScore++;
+        return alert(
+          `Você perdeu!\nVocê escolheu ${humanChoice} e o computador ${computerChoice} \n\nPONTUAÇÃO:\nVocê: ${humanScore}\nComputador: ${computerScore} `,
+        );
+      } else {
+        humanScore++;
+        return alert(
+          `Você venceu!\nVocê escolheu ${humanChoice} e o computador ${computerChoice} \n\nPONTUAÇÃO:\nVocê: ${humanScore}\nComputador: ${computerScore} `,
+        );
+      }
+    }
+
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
 }
 
-
-
-
-playRound(getHumanChoice(), getComputerChoice());
-
+playGame();
