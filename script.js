@@ -8,7 +8,9 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let humanChoice = prompt("Digite sua escolha: \nPedra \nPapel \nTesoura ");
+  let humanChoice = prompt(
+    "Digite sua escolha: \n✊ Pedra \n✋Papel \n✌Tesoura ",
+  );
   humanChoice = humanChoice.toUpperCase();
   return humanChoice;
 }
@@ -20,27 +22,27 @@ function playGame() {
   function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
       return alert(
-        `Houve um empate!\nSua escolha: ${humanChoice}\nEscolha do computador: ${computerChoice}`,
+        `🟰 Houve um empate!\n\nVocê: ${humanChoice} | Computador: ${computerChoice}`,
       );
     } else if (humanChoice === "PEDRA" && computerChoice === "PAPEL") {
       computerScore++;
       return alert(
-        `Você perdeu!\nVocê escolheu ${humanChoice} e o computador ${computerChoice} \n\nPONTUAÇÃO:\nVocê: ${humanScore}\nComputador: ${computerScore} `,
+        `❌ Rodada perdida!\n\nVocê: ${humanChoice} | Computador: ${computerChoice} \n\n📊 PONTUAÇÃO:\n🙂 Você: ${humanScore}\n🤖 Computador:  ${computerScore} `,
       );
     } else if (humanChoice === "PAPEL" && computerChoice === "TESOURA") {
       computerScore++;
       return alert(
-        `Você perdeu!\nVocê escolheu ${humanChoice} e o computador ${computerChoice} \n\nPONTUAÇÃO:\nVocê: ${humanScore}\nComputador: ${computerScore} `,
+        `❌ Rodada perdida!\n\nVocê: ${humanChoice} | Computador: ${computerChoice} \n\n📊 PONTUAÇÃO:\n🙂 Você: ${humanScore}\n🤖 Computador:  ${computerScore} `,
       );
     } else if (humanChoice === "TESOURA" && computerChoice === "PEDRA") {
       computerScore++;
       return alert(
-        `Você perdeu!\nVocê escolheu ${humanChoice} e o computador ${computerChoice} \n\nPONTUAÇÃO:\nVocê: ${humanScore}\nComputador: ${computerScore} `,
+        `❌ Rodada perdida!\n\nVocê: ${humanChoice} | Computador: ${computerChoice} \n\n📊 PONTUAÇÃO:\n🙂 Você: ${humanScore}\n🤖 Computador: ${computerScore} `,
       );
     } else {
       humanScore++;
       return alert(
-        `Você venceu!\nVocê escolheu ${humanChoice} e o computador ${computerChoice} \n\nPONTUAÇÃO:\nVocê: ${humanScore}\nComputador: ${computerScore} `,
+        `✅ Rodada ganha!\nVocê: ${humanChoice} | Computador: ${computerChoice} \n\n📊 PONTUAÇÃO:\n🙂 Você: ${humanScore}\n🤖 Computador: ${computerScore} `,
       );
     }
   }
@@ -53,15 +55,15 @@ function playGame() {
 
   if (humanScore > computerScore) {
     return alert(
-      `Você VENCEU!\nSua pontuação: ${humanScore}\nComputador: ${computerScore}`,
+      `RESULTADO FINAL...\n\n🥳 Você VENCEU!\n\n🙂 Sua pontuação: ${humanScore}\n🤖 Computador: ${computerScore}`,
     );
-  } else if (humanScore < computerScore){
+  } else if (humanScore < computerScore) {
     return alert(
-      `Você PERDEU!\nSua pontuação: ${humanScore}\nComputador: ${computerScore}`,
+      `RESULTADO FINAL...\n\n❌ Você PERDEU!\n\n🙂 Sua pontuação: ${humanScore}\n🤖 Computador: ${computerScore}`,
     );
-  } else{
+  } else {
     return alert(
-      `Houve um EMPATE!\nSua pontuação: ${humanScore}\nComputador: ${computerScore}`,
+      `RESULTADO FINAL...\n\n🟰 Houve um EMPATE!\n\n🙂 Sua pontuação: ${humanScore}\n🤖 Computador: ${computerScore}`,
     );
   }
 }
