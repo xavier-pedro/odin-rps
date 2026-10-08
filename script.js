@@ -47,8 +47,6 @@ function playGame() {
     }
   }
 
-
-
   if (humanScore > computerScore) {
     return alert(
       `RESULTADO FINAL...\n\n🥳 Você VENCEU!\n\n🙂 Sua pontuação: ${humanScore}\n🤖 Computador: ${computerScore}`,
@@ -64,4 +62,12 @@ function playGame() {
   }
 }
 
-playGame();
+// playGame();
+const botao = document.querySelectorAll("button");
+
+botao.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const playerSelection = btn.textContent;
+    console.log(playerSelection)
+  });
+});
