@@ -47,11 +47,7 @@ function playGame() {
     }
   }
 
-  playRound(getHumanChoice(), getComputerChoice());
-  playRound(getHumanChoice(), getComputerChoice());
-  playRound(getHumanChoice(), getComputerChoice());
-  playRound(getHumanChoice(), getComputerChoice());
-  playRound(getHumanChoice(), getComputerChoice());
+
 
   if (humanScore > computerScore) {
     return alert(
