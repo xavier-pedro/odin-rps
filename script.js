@@ -7,15 +7,14 @@ function getComputerChoice() {
   return computerChoice;
 }
 
-function getHumanChoice() {
-  let humanChoice = prompt(
-    "Digite sua escolha: \n✊ Pedra \n✋Papel \n✌Tesoura ",
-  );
-  humanChoice = humanChoice.toUpperCase();
-  return humanChoice;
-}
+// function getHumanChoice() {
+//   let humanChoice = prompt(
+//     "Digite sua escolha: \n✊ Pedra \n✋Papel \n✌Tesoura ",
+//   );
+//   humanChoice = humanChoice.toUpperCase();
+//   return humanChoice;
+// }
 
-function playGame() {
   let humanScore = 0;
   let computerScore = 0;
 
@@ -47,27 +46,15 @@ function playGame() {
     }
   }
 
-  if (humanScore > computerScore) {
-    return alert(
-      `RESULTADO FINAL...\n\n🥳 Você VENCEU!\n\n🙂 Sua pontuação: ${humanScore}\n🤖 Computador: ${computerScore}`,
-    );
-  } else if (humanScore < computerScore) {
-    return alert(
-      `RESULTADO FINAL...\n\n❌ Você PERDEU!\n\n🙂 Sua pontuação: ${humanScore}\n🤖 Computador: ${computerScore}`,
-    );
-  } else {
-    return alert(
-      `RESULTADO FINAL...\n\n🟰 Houve um EMPATE!\n\n🙂 Sua pontuação: ${humanScore}\n🤖 Computador: ${computerScore}`,
-    );
-  }
-}
+const botton = document.querySelectorAll("button");
+const result = document.querySelector("div");
 
-// playGame();
-const botao = document.querySelectorAll("button");
-
-botao.forEach((btn) => {
+botton.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const playerSelection = btn.textContent;
-    console.log(playerSelection)
+
+    playRound(playerSelection, getComputerChoice());
   });
 });
+
+
