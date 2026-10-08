@@ -51,7 +51,7 @@ function playGame() {
       }
     } else {
       const resultHistory = document.createElement("li");
-      resultHistory.textContent = `O VENCEDOR FINAL FOI... ${humanScore < 5 ? `Computador com ${computerScore}` : `Você com ${computerScore}`}`;
+      resultHistory.textContent = `O VENCEDOR FINAL FOI... ${humanScore < 5 ? `Computador com ${computerScore}` : `Você com ${humanScore}`}`;
       return result.appendChild(resultHistory);
     }
   }
